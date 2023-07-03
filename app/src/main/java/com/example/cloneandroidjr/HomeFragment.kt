@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.example.androidjr.R
 import com.example.androidjr.databinding.FragmentHomeBinding
-import com.example.androidjr.databinding.FragmentLoginBinding
+
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -32,12 +29,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     }
 
-    private fun setupBottomNavigation() {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
-        NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
-    }
+//    private fun setupBottomNavigation() {
+//        val navHostFragment =
+//            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//        navController = navHostFragment.navController
+//        NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
+//    }
 
 
 

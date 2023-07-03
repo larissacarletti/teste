@@ -1,18 +1,17 @@
 package com.example.cloneandroidjr
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.androidjr.R
-import com.example.androidjr.databinding.FragmentLoginBinding
+import com.example.androidjr.databinding.FragmentEditProfileBinding
 
+class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
-class LoginFragment : Fragment(R.layout.fragment_login) {
-
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,16 +19,15 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentEditProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonGoogleLogin.setOnClickListener {
-            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
-            findNavController().navigate(action)
-        }
+
+
     }
+
 }
