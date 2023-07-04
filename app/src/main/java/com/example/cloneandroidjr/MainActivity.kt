@@ -15,6 +15,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setUpBottomNav()
+
+
+    }
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTrasaction = fragmentManager.beginTransaction()
+        fragmentTrasaction.replace(R.id.frame_layout, fragment)
+        fragmentTrasaction.commit()
+    }
+    private fun setUpBottomNav() {
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_home -> replaceFragment(HomeFragment())
@@ -26,12 +37,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-    }
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTrasaction = fragmentManager.beginTransaction()
-        fragmentTrasaction.replace(R.id.frame_layout, fragment)
-        fragmentTrasaction.commit()
     }
 
 

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.androidjr.R
-import com.example.androidjr.databinding.FragmentHomeBinding
 import com.example.androidjr.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -28,8 +27,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonEditProfile.setOnClickListener {
-            val action = ProfileFragmentDirections.actionProfileFragmentToEditProfileFragment()
-            findNavController().navigate(action)
+
         }
     }
 
