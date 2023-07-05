@@ -26,9 +26,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonEditProfile.setOnClickListener {
-
-        }
+       // VOLTAR NISSO DEPOIS
+//        binding.buttonEditProfile.setOnClickListener {
+//            val action = ProfileFragmentDirections.actionProfileFragmentToEditProfileFragment()
+//            findNavController().navigate(action)
+//        }
     }
 
 }
