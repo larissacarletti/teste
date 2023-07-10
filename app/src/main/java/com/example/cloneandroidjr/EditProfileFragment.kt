@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.androidjr.R
 import com.example.androidjr.databinding.FragmentEditProfileBinding
 
-class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
+class EditProfileFragment : Fragment() {
 
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
@@ -23,11 +23,5 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-
-    }
 
 }

@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.androidjr.R
 import com.example.androidjr.databinding.FragmentProfileBinding
 
-class ProfileFragment : Fragment(R.layout.fragment_profile) {
+class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -26,11 +27,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // VOLTAR NISSO DEPOIS
-//        binding.buttonEditProfile.setOnClickListener {
-//            val action = ProfileFragmentDirections.actionProfileFragmentToEditProfileFragment()
-//            findNavController().navigate(action)
-//        }
-    }
+        binding.buttonEditProfile.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment2_to_editProfileFragment2)
 
+        }
+    }
 }

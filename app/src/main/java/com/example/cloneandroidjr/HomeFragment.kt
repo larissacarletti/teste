@@ -41,7 +41,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRoleList()
-        setUpTabs()
+        //setUpTabs()
     }
 
     private fun setUpRoleList() = binding.run {
@@ -50,45 +50,45 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView.adapter = adapter
     }
 
-    private fun setUpTabs() {
-        tabLayout = binding.tabLayout
-        viewPager = binding.viewPager2
-        tabAdapter = TabAdapter(this)
-        TabLayoutMediator(tabLayout, viewPager) { tab, index ->
-            tab.text = when (index) {
-                0 -> { "Todos" }
-                1 -> { "Android" }
-                2 -> { "Ios" }
-                3 -> { "Flutter" }
-                else -> {
-                    throw NotFoundException("Position Not Found")
-                }
-            }
-        }.attach()
-
-        viewPager.adapter = tabAdapter
-
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                tab?.let {
-                    viewPager.currentItem = tab.position
-                    roleItemAdapter.filterList(tab.position)
-                    roleItemAdapter.notifyDataSetChanged()
-                }
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-        })
-
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                tabLayout.selectTab(tabLayout.getTabAt(position))
-            }
-        })
-    }
+//    private fun setUpTabs() {
+//        tabLayout = binding.tabLayout
+//        viewPager = binding.viewPager2
+//        tabAdapter = TabAdapter(this)
+//        TabLayoutMediator(tabLayout, viewPager) { tab, index ->
+//            tab.text = when (index) {
+//                0 -> { "Todos" }
+//                1 -> { "Android" }
+//                2 -> { "Ios" }
+//                3 -> { "Flutter" }
+//                else -> {
+//                    throw NotFoundException("Position Not Found")
+//                }
+//            }
+//        }.attach()
+//
+//        viewPager.adapter = tabAdapter
+//
+//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//            override fun onTabSelected(tab: TabLayout.Tab?) {
+//                tab?.let {
+//                    viewPager.currentItem = tab.position
+//                    roleItemAdapter.filterList(tab.position)
+//                    roleItemAdapter.notifyDataSetChanged()
+//                }
+//            }
+//
+//            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+//
+//            override fun onTabReselected(tab: TabLayout.Tab?) {}
+//        })
+//
+//        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//            override fun onPageSelected(position: Int) {
+//                super.onPageSelected(position)
+//                tabLayout.selectTab(tabLayout.getTabAt(position))
+//            }
+//        })
+//    }
 }
 
 
