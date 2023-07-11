@@ -28,8 +28,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonEditProfile.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment2_to_editProfileFragment2)
-
+            findNavController().navigate(R.id.action_profileFragment2_to_editProfileFragment2)
         }
     }
 }
